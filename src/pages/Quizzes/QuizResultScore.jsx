@@ -1,95 +1,36 @@
-// src/pages/QuizResultScorePage.jsx
-import React, { useState } from "react";
+// src/pages/QuizResultPage.jsx
+import React from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
-import { useNavigate } from "react-router-dom";
 
-const QuizResultScorePage = () => {
-  const [score] = useState(80); // Simulasi skor (80)
-  const navigate = useNavigate();
+const QuizResultPage = () => {
+    const location = useLocation();
+    const { score, totalQuestions } = location.state || { score: 0, totalQuestions: 0 };
 
-  // Data soal dan jawaban
-  const questions = [
-    {
-      question: "What is Python primarily used for?",
-      correctAnswer: "Web development, data analysis, automation, and more",
-      userAnswer: "Only mobile development",
-      isCorrect: false,
-    },
-    {
-      question: "What is the capital of France?",
-      correctAnswer: "Paris",
-      userAnswer: "Paris",
-      isCorrect: true,
-    },
-    {
-      question: "What is 2 + 2?",
-      correctAnswer: "4",
-      userAnswer: "4",
-      isCorrect: true,
-    },
-  ];
+    return (
+        <div className="bg-[#000926] text-white">
+            <Navbar />
+            <div className="py-8 px-4 sm:px-8 lg:px-16">
+                <section className="max-w-4xl mx-auto py-4">
+                    <div className="flex justify-start items-center space-x-8">
+                        <div className="bg-[#1D2540] p-6 rounded-lg shadow-lg">
+                            <h2 className="text-xl font-semibold mb-4 text-white">Your Result:</h2>
+                            <p className="text-white text-2xl mb-4">
+                                <strong>Score: {score} / {totalQuestions}</strong>
+                            </p>
+                        </div>
+                    </div>
 
-  // Fungsi untuk kembali ke halaman utama
-  const goToHome = () => {
-    navigate("/");
-  };
-
-  return (
-    <div className="bg-[#000926] text-white">
-      <Navbar />
-
-      {/* Quiz Result Score Section */}
-      <section className="p-12">
-        <h1 className="text-[36px] font-bold mb-4 text-[#FFD200] text-shadow-md">
-          Score: {score}
-        </h1>
-
-        {/* Quiz Questions and Answers */}
-        <div className="space-y-6">
-          {questions.map((question, index) => (
-            <div key={index} className="bg-[#2E3A59] p-6 rounded-[20px] shadow-lg">
-              <h3 className="text-[22px] font-bold mb-4">{question.question}</h3>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <span
-                    className={`mr-4 p-2 rounded-full ${
-                      question.isCorrect ? "bg-[#4CAF50]" : "bg-[#F44336]"
-                    }`}
-                  >
-                    {question.isCorrect ? "✔️" : "❌"}
-                  </span>
-                  <span className="text-[16px]">{question.userAnswer}</span>
-                </div>
-                <div className="text-[16px] text-[#A9A9A9]">
-                  Correct answer: {question.correctAnswer}
-                </div>
-              </div>
+                    {/* Optional message */}
+                    <div className="mt-8 text-center text-white">
+                        <p>Congratulations! You completed the quiz. Keep practicing to improve your skills.</p>
+                    </div>
+                </section>
             </div>
-          ))}
+            <Footer />
         </div>
-
-        {/* Feedback Section (Optional) */}
-        <div className="text-center mt-12">
-          <h2 className="text-[18px] font-bold text-white">
-            {score >= 70 ? "Great job!" : "Keep trying!"}
-          </h2>
-        </div>
-
-        {/* Back to Home Button */}
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={goToHome}
-            className="bg-gradient-to-r from-[#FFD200] to-[#F7971E] py-3 px-8 rounded-[30px] text-white text-[18px]"
-          >
-            Back to Home
-          </button>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
+    );
 };
 
-export default QuizResultScorePage;
+export default QuizResultPage;

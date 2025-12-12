@@ -10,7 +10,7 @@ import twitter from "../../assets/social_x.png";
 const Footer = () => {
   return (
     <footer className="bg-[#000515] text-white py-8 px-4">
-      <div className="max-w-screen-xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         {/* Main Text Section */}
         <h1 className="text-3xl font-semibold mb-4">CodeQuest. We’re here</h1>
         
@@ -30,13 +30,13 @@ const Footer = () => {
         <div className="mb-10 flex justify-center gap-10">
           <NavLink
             to="/insights"
-            className="px-4 py-1.5 rounded-full text-white text-sm font-bold font-[Montserrat] border-1 border-[#000926] bg-[#000000] transition hover:bg-white/10"
+            className="px-4 py-1.5 rounded-full text-white text-sm font-bold font-[Montserrat] border border-[#000926] bg-[#000000] transition hover:bg-white/10"
           >
             👀Insights
           </NavLink>
           <NavLink
             to="/contact"
-            className="px-4 py-1.5 rounded-full text-white text-sm font-bold font-[Montserrat] border-1 border-[#000926] bg-[#000000] hover:bg-white/10 transition"
+            className="px-4 py-1.5 rounded-full text-white text-sm font-bold font-[Montserrat] border border-[#000926] bg-[#000000] hover:bg-white/10 transition"
           >
             👋Contact
           </NavLink>
