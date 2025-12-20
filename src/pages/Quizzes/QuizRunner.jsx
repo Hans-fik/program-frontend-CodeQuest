@@ -120,10 +120,10 @@ const QuizRunnerPage = () => {
 
     return (
         <div className="bg-[#000926] text-white">
-            <Navbar />
+            
 
             {/* 🔥 Timer Bar - Sticky di atas konten kuis */}
-            <div className="sticky top-16 z-10 w-full bg-[#0B1735] shadow-xl py-3 px-8 text-center border-b border-gray-700">
+            <div className="sticky top z-10 w-full bg-[#0B1735] shadow-xl py-3 px-8 text-center border-b border-gray-700">
                 <div className="max-w-4xl mx-auto flex justify-between items-center">
                     <h2 className="text-lg font-semibold text-gray-400">Time Remaining:</h2>
                     <div className="text-xl font-bold bg-[#1D2540] text-[#FFD200] px-4 py-1 rounded-lg">

@@ -13,18 +13,19 @@ const QuizResultPage = () => {
             <Navbar />
             <div className="py-8 px-4 sm:px-8 lg:px-16">
                 <section className="max-w-4xl mx-auto py-4">
-                    <div className="flex justify-start items-center space-x-8">
-                        <div className="bg-[#1D2540] p-6 rounded-lg shadow-lg">
-                            <h2 className="text-xl font-semibold mb-4 text-white">Your Result:</h2>
-                            <p className="text-white text-2xl mb-4">
-                                <strong>Score: {score} / {totalQuestions}</strong>
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Optional message */}
-                    <div className="mt-8 text-center text-white">
-                        <p>Congratulations! You completed the quiz. Keep practicing to improve your skills.</p>
+                    <h1 className="text-3xl font-bold text-center mb-6 text-[#FFD200]">
+                        Quiz Completed!
+                    </h1>
+                    <div className="bg-[#1D2540] p-6 rounded-lg shadow-lg">
+                        <h2 className="text-xl font-semibold mb-4 text-white">
+                            Your Result:
+                        </h2>
+                        <p className="text-white text-2xl mb-4">
+                            <strong>Score: {score} / {totalQuestions}</strong>
+                        </p>
+                        <p className="text-white">
+                            Congratulations! You completed the quiz. Keep practicing to improve your skills.
+                        </p>
                     </div>
                 </section>
             </div>
